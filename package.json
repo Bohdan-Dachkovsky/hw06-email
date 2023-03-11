@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/Bohdan-Dachkovsky/hw06-email/issues"
   },
-  "homepage": "https://github.com/Bohdan-Dachkovsky/hw06-email#readme"
+  "homepage": "https://github.com/Bohdan-Dachkovsky/hw06-email#readme",
+  "dependencies": {
+    "nodemon": "^2.0.21"
+  }
 }
