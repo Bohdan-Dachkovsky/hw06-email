@@ -1,0 +1,21 @@
+{
+  "name": "hw06-email",
+  "version": "1.0.0",
+  "description": "Push data in file, Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bohdan-Dachkovsky/hw06-email.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bohdan-Dachkovsky/hw06-email/issues"
+  },
+  "homepage": "https://github.com/Bohdan-Dachkovsky/hw06-email#readme"
+}
