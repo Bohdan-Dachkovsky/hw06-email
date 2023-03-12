@@ -20,7 +20,7 @@ function getContactById(textFile, contactId) {
     if (err) console.log(err)
     else {
       console.log('\nCurrent directory filenames:')
-      data.data.forEach((data) => {
+      data.find((data) => {
         console.log(data, contactId)
       })
     }
