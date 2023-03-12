@@ -20,9 +20,8 @@ function getContactById(textFile, contactId) {
     if (err) console.log(err)
     else {
       console.log('\nCurrent directory filenames:')
-      data.data.forEach((currentElement, index, array) => {
-        return console.log(currentElement)
-        currentElement.id === contactId
+      data.forEach((currentElement, index, array) => {
+        return currentElement.id === contactId
       })
     }
   })
