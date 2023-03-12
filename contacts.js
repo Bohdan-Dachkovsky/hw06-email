@@ -16,12 +16,12 @@ function listContacts(textFile) {
 }
 
 function getContactById(textFile, contactId) {
-  fs.readdir(path.join(__dirname, textFile), (err, data) => {
+  fs.readFile(path.join(__dirname, textFile), (err, data) => {
     if (err) console.log(err)
     else {
       console.log('\nCurrent directory filenames:')
-      data.forEach((currentElement, index, array) => {
-        return currentElement.id === contactId
+      data.data.forEach((data) => {
+        console.log(data, contactId)
       })
     }
   })
