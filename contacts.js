@@ -23,8 +23,7 @@ function getContactById(textFile, contactId) {
       const parsedObj = JSON.parse(data)
 
       parsedObj.numbers.map((number) => {
-        const obj = number.id === contactId
-        console.log(obj)
+        return number.id === contactId
       })
     }
   })
