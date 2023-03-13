@@ -24,9 +24,8 @@ function getContactById(textFile, contactId) {
 
       parsedObj.numbers.forEach((number) => {
         const obj = number.id === contactId
-        return obj
+        console.log(obj)
       })
-      console.log(obj)
     }
   })
 }
