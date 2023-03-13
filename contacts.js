@@ -21,8 +21,8 @@ function getContactById(textFile, contactId) {
     else {
       console.log('\nCurrent directory filenames:')
       const parsedObj = JSON.parse(data)
-      parsedObj.forEach((data) => {
-        console.log(data)
+      parsedObj.forEach((element) => {
+        console.log(element)
       })
     }
   })
