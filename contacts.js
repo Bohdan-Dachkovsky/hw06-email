@@ -16,7 +16,7 @@ function listContacts(textFile) {
 function getContactById(textFile, contactId) {
   fs.readFile(path.join(__dirname, textFile), (err, data) => {
     if (err) console.log(err)
-    else {
+    else if (data.length) {
       console.log('\nCurrent directory filenames:')
 
       const parsedObj = JSON.parse(data)
@@ -35,7 +35,7 @@ function removeContact(textFile, contactId) {
 
       const parsedObj = JSON.parse(data)
 
-      parsedObj.map((number) => Number(number.id) !== contactId)
+      parsedObj.map((number) => console.log(Number(number.id) !== contactId))
     }
   })
 }
