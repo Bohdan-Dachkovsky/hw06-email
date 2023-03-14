@@ -56,7 +56,7 @@ function addContact(textFile, name, email, phone) {
           id: nanoid(),
           name: name,
           email: email,
-          phone: email,
+          phone: phone,
         })
       })
     }
