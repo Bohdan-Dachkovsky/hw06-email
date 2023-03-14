@@ -55,6 +55,7 @@ function addContact(textFile, name, email, phone) {
           phone: phone,
         }),
       )
+      console.log(parsedObj)
     }
   })
 }
