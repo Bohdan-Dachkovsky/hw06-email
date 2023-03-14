@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
-const Nanoid = require('nanoid')
-const NanoidAsync = require('nanoid/async')
+const { nanoid } = require('nanoid')
+const numId = nanoid()
 function listContacts(textFile) {
   fs.readFile(path.join(__dirname, textFile), 'utf8', function (error, data) {
     try {
@@ -50,10 +50,10 @@ function addContact(textFile, name, email, phone) {
       console.log('\nCurrent directory filenames:')
 
       const parsedObj = JSON.parse(data)
-      console.log(NanoidAsync.nanoid())
+      console.log(numId)
       parsedObj.map((number, idex, array) => {
         return array.push({
-          id: NanoidAsync.nanoid(),
+          id: numId(),
           name: name,
           email: email,
           phone: email,
