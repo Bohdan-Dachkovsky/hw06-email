@@ -49,7 +49,7 @@ function addContact(textFile, name, email, phone) {
       console.log(id())
       parsedObj.map((number, idex, array) =>
         array.push({
-          id: id(),
+          id: id,
           name: name,
           email: email,
           phone: phone,
