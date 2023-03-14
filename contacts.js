@@ -20,9 +20,8 @@ function getContactById(textFile, contactId) {
       console.log('\nCurrent directory filenames:')
 
       const parsedObj = JSON.parse(data)
-
-      parsedObj.find((number) => Number(number.id) === contactId)
-      console.log(parsedObj)
+      console.log(objects)
+      parsedObj.find((number) => (objects = Number(number.id) === contactId))
     }
   })
 }
