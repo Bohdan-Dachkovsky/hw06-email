@@ -1,4 +1,5 @@
 import { nanoid } from 'nanoid'
+const id = nanoid(length).toString()
 const fs = require('fs')
 const path = require('path')
 const { nanoid } = require('nanoid')
@@ -51,10 +52,10 @@ function addContact(textFile, name, email, phone) {
       console.log('\nCurrent directory filenames:')
 
       const parsedObj = JSON.parse(data)
-      console.log(nanoid())
+      console.log(id())
       parsedObj.map((number, idex, array) => {
         return array.push({
-          id: nanoid(),
+          id: id(),
           name: name,
           email: email,
           phone: phone,
