@@ -28,7 +28,7 @@ function getContactById(textFile, contactId) {
   })
 }
 
-function removeContact(contactId) {
+function removeContact(textFile, contactId) {
   fs.readFile(path.join(__dirname, textFile), (err, data) => {
     if (err) console.log(err)
     else {
@@ -43,7 +43,7 @@ function removeContact(contactId) {
   })
 }
 
-function addContact(name, email, phone) {
+function addContact(textFile, name, email, phone) {
   fs.readFile(path.join(__dirname, textFile), (err, data) => {
     if (err) console.log(err)
     else {
