@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/Bohdan-Dachkovsky/hw06-email#readme",
   "dependencies": {
-    "nodemon": "^2.0.21",
-    "uuidv4": "^6.2.13"
+    "nanoid": "^4.0.1",
+    "nodemon": "^2.0.21"
   }
 }
