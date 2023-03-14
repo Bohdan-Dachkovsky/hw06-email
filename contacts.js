@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const { v4: uuidv4 } = require('uuid')
-const id = uuidv4()
+const id = uuidv4().toString()
 function listContacts(textFile) {
   fs.readFile(path.join(__dirname, textFile), 'utf8', function (error, data) {
     try {
@@ -47,7 +47,7 @@ function addContact(textFile, name, email, phone) {
 
       const parsedObj = JSON.parse(data)
       console.log(id)
-      parsedObj.map((number, idex, array) =>
+      parsedObj.map((number, index, array) =>
         array.push({
           id: id,
           name: name,
