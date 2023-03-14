@@ -38,6 +38,7 @@ function removeContact(textFile, contactId) {
       const parsedObj = JSON.parse(data)
 
       parsedObj.map((number) => console.log(Number(number.id) !== contactId))
+      console.log(parsedObj)
     }
   })
 }
