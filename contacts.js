@@ -21,9 +21,7 @@ function getContactById(textFile, contactId) {
 
       const parsedObj = JSON.parse(data)
 
-      parsedObj.find((number) => {
-        return console.log(Number(number.id) === contactId)
-      })
+      parsedObj.find((number) => Number(number.id) === contactId)
     }
   })
 }
@@ -36,9 +34,7 @@ function removeContact(textFile, contactId) {
 
       const parsedObj = JSON.parse(data)
 
-      parsedObj.map((number) => {
-        return console.log(Number(number.id) !== contactId)
-      })
+      parsedObj.map((number) => Number(number.id) !== contactId)
     }
   })
 }
@@ -51,14 +47,14 @@ function addContact(textFile, name, email, phone) {
 
       const parsedObj = JSON.parse(data)
       console.log(id())
-      parsedObj.map((number, idex, array) => {
-        return array.push({
+      parsedObj.map((number, idex, array) =>
+        array.push({
           id: id(),
           name: name,
           email: email,
           phone: phone,
-        })
-      })
+        }),
+      )
     }
   })
 }
