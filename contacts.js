@@ -1,3 +1,4 @@
+import { nanoid } from 'nanoid'
 const fs = require('fs')
 const path = require('path')
 const { nanoid } = require('nanoid')
