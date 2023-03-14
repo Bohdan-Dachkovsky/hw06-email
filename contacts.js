@@ -1,9 +1,7 @@
-import { nanoid } from 'nanoid'
-const id = nanoid().toString()
 const fs = require('fs')
 const path = require('path')
 const { nanoid } = require('nanoid')
-
+const id = nanoid().toString()
 function listContacts(textFile) {
   fs.readFile(path.join(__dirname, textFile), 'utf8', function (error, data) {
     try {
