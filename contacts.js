@@ -1,6 +1,5 @@
 const fs = require('fs')
 const path = require('path')
-import { uuid } from 'uuidv4'
 const { uuid } = require('uuidv4')
 function listContacts(textFile) {
   fs.readFile(path.join(__dirname, textFile), 'utf8', function (error, data) {
