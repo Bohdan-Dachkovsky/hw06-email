@@ -46,7 +46,7 @@ function addContact(textFile, name, email, phone) {
       console.log('\nCurrent directory filenames:')
 
       const parsedObj = JSON.parse(data)
-      console.log(id())
+      console.log(id)
       parsedObj.map((number, idex, array) =>
         array.push({
           id: id,
