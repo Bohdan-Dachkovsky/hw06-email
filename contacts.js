@@ -21,9 +21,9 @@ function getContactById(textFile, contactId) {
     else {
       console.log('\nCurrent directory filenames:')
       const parsedObj = JSON.parse(data)
-      console.log(contactId.toString().typeOf())
+      console.log(contactId.toString())
       parsedObj.find((number) => {
-        return number.id === contactId.toString()
+        return Number(number.id) === contactId
       })
     }
   })
