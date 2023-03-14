@@ -22,10 +22,11 @@ function getContactById(textFile, contactId) {
       console.log('\nCurrent directory filenames:')
       const parsedObj = JSON.parse(data)
 
-      parsedObj.numbers.forEach((number) => {
+      parsedObj.numbers.map((number) => {
         return console.log(number.id === contactId)
       })
     }
+    console.log(parsedObj)
   })
 }
 
