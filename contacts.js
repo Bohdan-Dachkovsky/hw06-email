@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid'
-const id = nanoid(length).toString()
+const id = nanoid().toString()
 const fs = require('fs')
 const path = require('path')
 const { nanoid } = require('nanoid')

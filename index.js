@@ -11,11 +11,11 @@ function invokeAction({ action, textFile, id, name, email, phone }) {
     case 'get':
       getContactById(textFile, id)
       break
-    case 'add':
+    case 'remove':
       removeContact(textFile, id)
       break
 
-    case 'remove':
+    case 'add':
       addContact(textFile, name, email, phone)
       break
 
