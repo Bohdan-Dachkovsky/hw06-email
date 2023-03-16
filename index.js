@@ -6,17 +6,17 @@ const { addContact } = require('./contacts.js')
 function invokeAction({ action, textFile, id, name, email, phone }) {
   switch (action) {
     case 'list':
-      listContacts(textFile)
+      listContacts()
       break
     case 'get':
-      getContactById(textFile, id)
+      getContactById(id)
       break
     case 'remove':
-      removeContact(textFile, id)
+      removeContact(id)
       break
 
     case 'add':
-      addContact(textFile, name, email, phone)
+      addContact(name, email, phone)
       break
 
     default:

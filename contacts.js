@@ -2,7 +2,8 @@ const fs = require('fs')
 const path = require('path')
 const { v4: uuidv4 } = require('uuid')
 const id = uuidv4().toString()
-function listContacts(textFile) {
+const textFile = 'db/contacts.json'
+function listContacts() {
   fs.readFile(path.join(__dirname, textFile), 'utf8', function (error, data) {
     try {
       console.log(data)
@@ -13,7 +14,7 @@ function listContacts(textFile) {
   })
 }
 
-function getContactById(textFile, contactId) {
+function getContactById(contactId) {
   fs.readFile(path.join(__dirname, textFile), (err, data) => {
     if (err) console.log(err)
     else if (data.length) {
@@ -21,15 +22,13 @@ function getContactById(textFile, contactId) {
 
       const parsedObj = JSON.parse(data)
 
-      const found = parsedObj.find(
-        (number) => Number(number.id) === contactIdдф,
-      )
+      const found = parsedObj.find((number) => Number(number.id) === contactId)
       console.log(found)
     }
   })
 }
 
-function removeContact(textFile, contactId) {
+function removeContact(contactId) {
   fs.readFile(path.join(__dirname, textFile), (err, data) => {
     if (err) console.log(err)
     else {
@@ -43,7 +42,7 @@ function removeContact(textFile, contactId) {
   })
 }
 
-function addContact(textFile, name, email, phone) {
+function addContact(name, email, phone) {
   fs.readFile(path.join(__dirname, textFile), (err, data) => {
     if (err) console.log(err)
     else {
