@@ -3,7 +3,7 @@ const { listContacts } = require('./contacts.js')
 const { getContactById } = require('./contacts.js')
 const { removeContact } = require('./contacts.js')
 const { addContact } = require('./contacts.js')
-function invokeAction({ action, textFile, id, name, email, phone }) {
+function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
     case 'list':
       listContacts()

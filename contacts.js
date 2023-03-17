@@ -36,13 +36,16 @@ function removeContact(contactId) {
 
       const parsedObj = JSON.parse(data)
 
-      parsedObj.map((number) => console.log(Number(number.id) !== contactId))
+      parsedObj.forEach((number, idx, arr) => {
+        return [...arr.incledes(Number(number.id) !== contactId)]
+      })
       console.log(parsedObj)
     }
   })
 }
 
 function addContact(name, email, phone) {
+  const textEL = new Error('Sorry, contact didnt’t implement')
   fs.readFile(path.join(__dirname, textFile), (err, data) => {
     if (err) console.log(err)
     else {
@@ -50,15 +53,16 @@ function addContact(name, email, phone) {
 
       const parsedObj = JSON.parse(data)
       console.log(id)
-      parsedObj.map((number, index, array) =>
-        array.push({
-          id: id,
-          name: name,
-          email: email,
-          phone: phone,
-        }),
-      )
+      const newArray = parsedObj.forEach((number, index, array) => {
+        return [...array, { id: id, name: name, email: email, phone: phone }]
+      })
+      return newArray
+
       console.log(parsedObj)
+    }
+
+    if (newArray ?? textEL) {
+      console.log(textEL)
     }
   })
 }
