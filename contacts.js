@@ -54,7 +54,7 @@ function addContact(name, email, phone) {
 
       const parsedObj = JSON.parse(data)
 
-      const newArray = parsedObj.push({
+      return parsedObj.push({
         id: id,
         name: name,
         email: email,
@@ -62,8 +62,8 @@ function addContact(name, email, phone) {
       })
     }
 
-    if (newArray ?? textEL) {
-      console.log(newArray)
+    if (parsedObj ?? textEL) {
+      console.log(parsedObj)
     }
   })
 }
