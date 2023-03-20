@@ -54,7 +54,7 @@ function addContact(name, email, phone) {
 
       const parsedObj = JSON.parse(data)
 
-      return parsedObj.push({
+      parsedObj.push({
         id: id,
         name: name,
         email: email,
