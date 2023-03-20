@@ -60,9 +60,8 @@ function addContact(name, email, phone) {
         email: email,
         phone: phone,
       })
+      console.log(parsedObj)
     }
-
-    console.log(parsedObj)
   })
 }
 module.exports = {
