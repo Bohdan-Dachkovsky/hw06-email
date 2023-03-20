@@ -63,7 +63,7 @@ function addContact(name, email, phone) {
     }
 
     if (newArray ?? textEL) {
-      console.log(textEL)
+      console.log(newArray)
     }
   })
 }
