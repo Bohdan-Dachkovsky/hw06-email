@@ -35,10 +35,12 @@ function removeContact(contactId) {
       console.log('\nCurrent directory filenames:')
 
       const parsedObj = JSON.parse(data)
-      const dltObject = parsedObj.find(
-        (number) => Number(number.id) !== contactId,
-      )
-      delete parsedObj.dltObject
+      // const dltObject = parsedObj.find(
+      //   (number) => Number(number.id) !== contactId,
+      // )
+      for (element in parsedObj) {
+        delete parsedObj[element.id !== contactId]
+      }
 
       console.log(parsedObj)
     }
