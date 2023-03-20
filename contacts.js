@@ -53,14 +53,13 @@ function addContact(name, email, phone) {
       console.log('\nCurrent directory filenames:')
 
       const parsedObj = JSON.parse(data)
-      console.log(id)
+
       const newArray = parsedObj.push({
         id: id,
         name: name,
         email: email,
         phone: phone,
       })
-      return console.log(newArray)
     }
 
     if (newArray ?? textEL) {
