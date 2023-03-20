@@ -37,7 +37,7 @@ function removeContact(contactId) {
       const parsedObj = JSON.parse(data)
 
       for (element in parsedObj) {
-        delete parsedObj.includes(Number(element.id) !== contactId)
+        delete element.includes(Number(element.id) !== contactId)
       }
 
       console.log(parsedObj)
