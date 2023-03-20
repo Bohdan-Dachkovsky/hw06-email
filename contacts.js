@@ -62,9 +62,7 @@ function addContact(name, email, phone) {
       })
     }
 
-    if (parsedObj ?? textEL) {
-      console.log(parsedObj)
-    }
+    console.log(parsedObj)
   })
 }
 module.exports = {
