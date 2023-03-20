@@ -38,7 +38,7 @@ function removeContact(contactId) {
       const dltObject = parsedObj.find(
         (number) => Number(number.id) !== contactId,
       )
-      parsedObj.includes(dltObject)
+      delete parsedObj.dltObject
 
       console.log(parsedObj)
     }
