@@ -35,10 +35,11 @@ function removeContact(contactId) {
       console.log('\nCurrent directory filenames:')
 
       const parsedObj = JSON.parse(data)
+      const dltObject = parsedObj.find(
+        (number) => Number(number.id) !== contactId,
+      )
+      delete parsedObj[dltObject]
 
-      parsedObj.forEach((number, idx, arr) => {
-        return [...arr.incledes(Number(number.id) !== contactId)]
-      })
       console.log(parsedObj)
     }
   })
@@ -53,12 +54,13 @@ function addContact(name, email, phone) {
 
       const parsedObj = JSON.parse(data)
       console.log(id)
-      const newArray = parsedObj.forEach((number, index, array) => {
-        return [...array, { id: id, name: name, email: email, phone: phone }]
+      const newArray = parsedObj.push({
+        id: id,
+        name: name,
+        email: email,
+        phone: phone,
       })
       return newArray
-
-      console.log(parsedObj)
     }
 
     if (newArray ?? textEL) {
