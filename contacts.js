@@ -39,7 +39,7 @@ function removeContact(contactId) {
       //   (number) => Number(number.id) !== contactId,
       // )
       for (element in parsedObj) {
-        delete Number(element.id) !== contactId
+        delete parsedObj.find((number) => Number(number.id) !== contactId)
       }
 
       console.log(parsedObj)
