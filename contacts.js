@@ -67,7 +67,7 @@ function addContact(name, email, phone) {
         email: email,
         phone: phone,
       })
-      console.table(parsedObj)
+      console.table(parsedObj, ['name', 'email', 'phone'])
     }
     fs.writeFile(textFile, parsedObj, (err) => {
       if (err) console.log(err)
