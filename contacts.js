@@ -40,7 +40,15 @@ function removeContact(contactId) {
       )
       const arrayUpd = dltObject
 
-      console.log(arrayUpd)
+      return arrayUpd
+    }
+  })
+  fs.writeFile(textFile, arrayUpd, (err) => {
+    if (err) console.log(err)
+    else {
+      console.log('File written successfully\n')
+      console.log('The written has the following contents:')
+      console.log(fs.readFileSync(textFile, 'utf8'))
     }
   })
 }
