@@ -29,7 +29,7 @@ function getContactById(contactId) {
 }
 
 function removeContact(contactId) {
-  const newArr = fs.readFile(path.join(__dirname, textFile), (err, data) => {
+  fs.readFile(path.join(__dirname, textFile), (err, data) => {
     if (err) console.log(err)
     else {
       console.log('\nCurrent directory filenames:')
@@ -41,14 +41,14 @@ function removeContact(contactId) {
       const arrayUpd = dltObject
       return arrayUpd
     }
-  })
-  fs.writeFile(textFile, newArr, (err) => {
-    if (err) console.log(err)
-    else {
-      console.log('File written successfully\n')
-      console.log('The written has the following contents:')
-      console.log(fs.readFileSync(textFile, 'utf8'))
-    }
+    fs.writeFile(textFile, arrayUpd, (err) => {
+      if (err) console.log(err)
+      else {
+        console.log('File written successfully\n')
+        console.log('The written has the following contents:')
+        console.log(fs.readFileSync(textFile, 'utf8'))
+      }
+    })
   })
 }
 
