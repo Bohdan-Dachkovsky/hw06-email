@@ -49,8 +49,8 @@ function removeContact(contactId) {
         console.log(fs.readFileSync(textFile, 'utf8'))
       }
     })
+    console.log(arrayUpd)
   })
-  console.log(arrayUpd)
 }
 
 function addContact(name, email, phone) {
