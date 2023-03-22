@@ -39,7 +39,7 @@ function removeContact(contactId) {
         (number) => Number(number.id) !== contactId,
       )
       const arrayUpd = dltObject
-      return console.log(arrayUpd)
+      return console.table(arrayUpd)
     }
     fs.writeFile(textFile, arrayUpd, (err) => {
       if (err) console.log(err)
@@ -67,7 +67,7 @@ function addContact(name, email, phone) {
         email: email,
         phone: phone,
       })
-      console.log(parsedObj)
+      console.table(parsedObj)
     }
     fs.writeFile(textFile, parsedObj, (err) => {
       if (err) console.log(err)
