@@ -39,7 +39,7 @@ function removeContact(contactId) {
         (number) => Number(number.id) !== contactId,
       )
       const arrayUpd = dltObject
-      return arrayUpd
+      return console.log(arrayUpd)
     }
     fs.writeFile(textFile, arrayUpd, (err) => {
       if (err) console.log(err)
@@ -49,7 +49,6 @@ function removeContact(contactId) {
         console.log(fs.readFileSync(textFile, 'utf8'))
       }
     })
-    console.log(arrayUpd)
   })
 }
 
@@ -70,6 +69,14 @@ function addContact(name, email, phone) {
       })
       console.log(parsedObj)
     }
+    fs.writeFile(textFile, parsedObj, (err) => {
+      if (err) console.log(err)
+      else {
+        console.log('File written successfully\n')
+        console.log('The written has the following contents:')
+        console.log(fs.readFileSync(textFile, 'utf8'))
+      }
+    })
   })
 }
 module.exports = {
