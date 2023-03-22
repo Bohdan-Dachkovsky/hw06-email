@@ -29,7 +29,7 @@ function getContactById(contactId) {
 }
 
 function removeContact(contactId) {
-  fs.readFile(path.join(__dirname, textFile), (err, data) => {
+  const newArr = fs.readFile(path.join(__dirname, textFile), (err, data) => {
     if (err) console.log(err)
     else {
       console.log('\nCurrent directory filenames:')
@@ -39,11 +39,10 @@ function removeContact(contactId) {
         (number) => Number(number.id) !== contactId,
       )
       const arrayUpd = dltObject
-
       return arrayUpd
     }
   })
-  fs.writeFile(textFile, arrayUpd, (err) => {
+  fs.writeFile(textFile, newArr, (err) => {
     if (err) console.log(err)
     else {
       console.log('File written successfully\n')
