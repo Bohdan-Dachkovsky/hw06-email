@@ -50,6 +50,7 @@ function removeContact(contactId) {
       }
     })
   })
+  console.log(arrayUpd)
 }
 
 function addContact(name, email, phone) {
