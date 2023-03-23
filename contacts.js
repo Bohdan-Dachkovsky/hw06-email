@@ -69,7 +69,7 @@ function addContact(name, email, phone) {
         number,
       })
       const newObj = parsedObj
-      return console.table(newObj, ['name', 'email', 'phone', 'total'])
+      return console.table(newObj, ['name', 'email', 'phone'])
     }
 
     fs.writeFile(textFile, newObj, (err) => {
