@@ -60,13 +60,13 @@ function addContact(name, email, phone) {
       console.log('\nCurrent directory filenames:')
 
       const parsedObj = JSON.parse(data)
-      let number = parsedObj.length
+      let number = Number(parsedObj.length)
       parsedObj.push({
         id: id,
         name: name,
         email: email,
         phone: phone,
-        Number(number)
+        number,
       })
       const newObj = parsedObj
       return console.table(newObj, ['name', 'email', 'phone', 'total'])
