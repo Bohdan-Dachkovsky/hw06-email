@@ -61,14 +61,14 @@ function addContact(name, email, phone) {
 
       const parsedObj = JSON.parse(data)
 
-      const newObj = parsedObj.push({
+      return parsedObj.push({
         id: id,
         name: name,
         email: email,
         phone: phone,
       })
-      console.table(newObj, ['name', 'email', 'phones'])
     }
+    const newObj = parsedObj
     fs.writeFile(textFile, newObj, (err) => {
       if (err) console.log(err)
       else {
@@ -77,6 +77,7 @@ function addContact(name, email, phone) {
         console.log(fs.readFileSync(textFile, 'utf8'))
       }
     })
+    console.table(newObj, ['name', 'email', 'phones'])
   })
 }
 module.exports = {
