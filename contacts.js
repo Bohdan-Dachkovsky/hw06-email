@@ -66,10 +66,10 @@ function addContact(name, email, phone) {
         name: name,
         email: email,
         phone: phone,
-        number,
+        Number(number)
       })
       const newObj = parsedObj
-      return console.table(newObj, ['name', 'email', 'phone'])
+      return console.table(newObj, ['name', 'email', 'phone', 'total'])
     }
 
     fs.writeFile(textFile, newObj, (err) => {
