@@ -66,7 +66,7 @@ function addContact(name, email, phone) {
         name: name,
         email: email,
         phone: phone,
-        number,
+        number: number,
       })
       const newObj = parsedObj
       return console.table(newObj, ['name', 'email', 'phone', 'total'])
