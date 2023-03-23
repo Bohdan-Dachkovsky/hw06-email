@@ -61,15 +61,16 @@ function addContact(name, email, phone) {
 
       const parsedObj = JSON.parse(data)
 
-      return parsedObj.push({
+      parsedObj.push({
         id: id,
         name: name,
         email: email,
         phone: phone,
       })
+      const newObj = parsedObj
+      return console.table(newObj, ['name', 'email', 'phones'])
     }
-    const newObj = parsedObj
-    console.table(newObj, ['name', 'email', 'phones'])
+
     fs.writeFile(textFile, newObj, (err) => {
       if (err) console.log(err)
       else {
