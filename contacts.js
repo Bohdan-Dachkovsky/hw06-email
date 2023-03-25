@@ -23,10 +23,10 @@ function getContactById(contactId) {
 
       const parsedObj = JSON.parse(data)
 
-      parsedObj.find(
+      const found = parsedObj.find(
         (number) => Number(number.id).toString() === contactId.toString(),
       )
-      return console.table(parsedObj)
+      return console.table(found)
     }
   })
 }
