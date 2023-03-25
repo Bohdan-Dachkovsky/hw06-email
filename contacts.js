@@ -26,7 +26,7 @@ function getContactById(contactId) {
       parsedObj.find(
         (number) => Number(number.id).toString() === contactId.toString(),
       )
-      console.table(parsedObj)
+      return console.table(parsedObj)
     }
   })
 }
@@ -40,7 +40,8 @@ function removeContact(contactId) {
       const parsedObj = JSON.parse(data)
       console.table(parsedObj)
       const dltObject = parsedObj.filter(
-        (number) => Number(number.id) !== contactId)
+        (number) => Number(number.id) !== contactId,
+      )
 
       const refreshObj = fs.writeFile(textFile, dltObject, (err) => {
         if (err) console.log(err)
