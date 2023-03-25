@@ -6,7 +6,7 @@ const textFile = 'db/contacts.json'
 function listContacts() {
   fs.readFile(path.join(__dirname, textFile), 'utf8', function (error, data) {
     try {
-      console.log(data)
+      console.table(data)
     } catch {
       throw Error('404')
       console.log(`Sorry, file have ${error.message}`)
@@ -38,17 +38,17 @@ function removeContact(contactId) {
       const dltObject = parsedObj.filter(
         (number) => Number(number.id) !== contactId,
       )
-      const arrayUpd = dltObject
-      return console.table(arrayUpd)
+
+      fs.writeFile(textFile, dltObject, (err) => {
+        if (err) console.log(err)
+        else {
+          console.log('File written successfully\n')
+          console.log('The written has the following contents:')
+          console.log(fs.readFileSync(textFile, 'utf8'))
+        }
+      })
+      return console.table(dltObject)
     }
-    fs.writeFile(textFile, arrayUpd, (err) => {
-      if (err) console.log(err)
-      else {
-        console.log('File written successfully\n')
-        console.log('The written has the following contents:')
-        console.log(fs.readFileSync(textFile, 'utf8'))
-      }
-    })
   })
 }
 
@@ -68,17 +68,16 @@ function addContact(name, email, phone) {
         phone: phone,
       })
       const newObj = parsedObj
+      fs.writeFile(textFile, newObj, (err) => {
+        if (err) console.log(err)
+        else {
+          console.log('File written successfully\n')
+          console.log('The written has the following contents:')
+          console.log(fs.readFileSync(textFile, 'utf8'))
+        }
+      })
       return console.table(newObj, ['name', 'email', 'phone'])
     }
-
-    fs.writeFile(textFile, newObj, (err) => {
-      if (err) console.log(err)
-      else {
-        console.log('File written successfully\n')
-        console.log('The written has the following contents:')
-        console.log(fs.readFileSync(textFile, 'utf8'))
-      }
-    })
   })
 }
 module.exports = {
