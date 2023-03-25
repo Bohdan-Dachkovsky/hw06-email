@@ -6,7 +6,8 @@ const textFile = 'db/contacts.json'
 function listContacts() {
   fs.readFile(path.join(__dirname, textFile), 'utf8', function (error, data) {
     try {
-      console.table(data)
+      const objFile = JSON.parse(data)
+      console.table(objFile)
     } catch {
       throw Error('404')
       console.log(`Sorry, file have ${error.message}`)
@@ -35,11 +36,12 @@ function removeContact(contactId) {
       console.log('\nCurrent directory filenames:')
 
       const parsedObj = JSON.parse(data)
+      console.table(parsedObj)
       const dltObject = parsedObj.filter(
-        (number) => Number(number.id) !== contactId,
+        (number) => Number(number.id).toString() !== contactId,
       )
 
-      fs.writeFile(textFile, dltObject, (err) => {
+      const refreshObj = fs.writeFile(textFile, dltObject, (err) => {
         if (err) console.log(err)
         else {
           console.log('File written successfully\n')
@@ -47,7 +49,7 @@ function removeContact(contactId) {
           console.log(fs.readFileSync(textFile, 'utf8'))
         }
       })
-      return console.table(dltObject)
+      return console.table(refreshObj)
     }
   })
 }
