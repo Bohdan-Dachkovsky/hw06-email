@@ -26,7 +26,7 @@ function getContactById(contactId) {
       const found = parsedObj.find(
         (number) => Number(number.id).toString() === contactId.toString(),
       )
-      return console.table(found)
+      return console.table(parsedObj)
     }
   })
 }
@@ -38,9 +38,8 @@ function removeContact(contactId) {
       console.log('\nCurrent directory filenames:')
 
       const parsedObj = JSON.parse(data)
-      console.table(parsedObj)
       const dltObject = parsedObj.filter(
-        (number) => Number(number.id) !== contactId,
+        (number) => Number(number.id).toString() !== contactId,
       )
 
       const refreshObj = fs.writeFile(textFile, dltObject, (err) => {
@@ -51,7 +50,7 @@ function removeContact(contactId) {
           console.log(fs.readFileSync(textFile, 'utf8'))
         }
       })
-      return console.log(refreshObj)
+      return console.table(refreshObj)
     }
   })
 }
@@ -71,12 +70,13 @@ function addContact(name, email, phone) {
         email: email,
         phone: phone,
       })
-      const newObj = parsedObj
-      fs.writeFile(textFile, newObj, (err) => {
+
+      const newObj = fs.writeFile(textFile, parsedObj, (err) => {
         if (err) console.log(err)
         else {
           console.log('File written successfully\n')
           console.log('The written has the following contents:')
+          console.log(fs.readFileSync(textFile, 'utf8'))
         }
       })
       return console.table(newObj, ['name', 'email', 'phone'])
