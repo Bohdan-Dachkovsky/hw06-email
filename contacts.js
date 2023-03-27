@@ -37,7 +37,7 @@ function removeContact(contactId) {
 
       const parsedObj = JSON.parse(data)
       const dltObject = parsedObj.filter(
-        (number) => Number(number.id) !== contactId,
+        (number) => Number(number.id).toString() !== contactId.toString(),
       )
       let chooseObj = dltObject
 
@@ -49,9 +49,9 @@ function removeContact(contactId) {
           console.log(
             fs.readFileSync(textFile, parseInt(chooseObj, 10), 'utf8'),
           )
-          return console.log(chooseObj)
         }
       })
+      return console.log(chooseObj)
     }
   })
 }
