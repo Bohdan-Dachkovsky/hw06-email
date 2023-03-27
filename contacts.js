@@ -74,7 +74,7 @@ function addContact(name, email, phone) {
         else {
           console.log('File written successfully\n')
           console.log('The written has the following contents:')
-          console.log(fs.readFileSync(textFile, 'utf8'))
+          const newObj = fs.readFileSync(textFile, 'utf8')
           return console.table(JSON.parse(newObj), ['name', 'email', 'phone'])
         }
       })
