@@ -48,9 +48,9 @@ function removeContact(contactId) {
           console.log(
             fs.readFileSync(textFile, parseInt(chooseObj, 10), 'utf8'),
           )
+          console.log(chooseObj)
         }
       })
-      return console.log(chooseObj)
     }
   })
 }
