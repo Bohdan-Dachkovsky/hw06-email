@@ -20,6 +20,7 @@
   "homepage": "https://github.com/Bohdan-Dachkovsky/hw06-email#readme",
   "dependencies": {
     "nodemon": "^2.0.21",
+    "npm": "^8.19.4",
     "uuid": "^9.0.0",
     "yargs": "^17.7.1"
   }
