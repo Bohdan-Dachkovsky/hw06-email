@@ -40,18 +40,18 @@ function removeContact(contactId) {
         (number) => Number(number.id) !== contactId,
       )
       let chooseObj = dltObject
-      return console.log(chooseObj)
-      // fs.writeFile(textFile, chooseObj, (err) => {
-      //   if (err) console.log(err)
-      //   else {
-      //     console.log('File written successfully\n')
-      //     console.log('The written has the following contents:')
-      //     console.log(
-      //       fs.readFileSync(textFile, parseInt(chooseObj, 10), 'utf8'),
-      //     )
-      //     console.log(chooseObj)
-      //  }
-      //})
+
+      fs.writeFile(textFile, chooseObj, (err) => {
+        if (err) console.log(err)
+        else {
+          console.log('File written successfully\n')
+          console.log('The written has the following contents:')
+          console.log(
+            fs.readFileSync(textFile, parseInt(chooseObj, 10), 'utf8'),
+          )
+          return console.log(chooseObj)
+        }
+      })
     }
   })
 }
