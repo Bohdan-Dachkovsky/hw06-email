@@ -51,7 +51,7 @@ function removeContact(contactId) {
           }
         },
       )
-      console.table(JSON.parse(newObj))
+      return console.table(JSON.parse(newObj))
     }
   })
 }
