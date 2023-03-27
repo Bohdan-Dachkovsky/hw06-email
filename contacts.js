@@ -40,7 +40,7 @@ function removeContact(contactId) {
         (number) => Number(number.id).toString() !== contactId.toString(),
       )
 
-      fs.writeFile(textFile, dltObject, (err) => {
+      fs.writeFile(textFile, JSON.stringify(dltObject), (err) => {
         if (err) console.log(err)
         else {
           console.log('File written successfully\n')
