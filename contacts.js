@@ -46,7 +46,7 @@ function removeContact(contactId) {
           console.log('File written successfully\n')
           console.log('The written has the following contents:')
           const refreshedObj = fs.readFileSync(textFile, 'utf8')
-          return console.log(JSON.parse(refreshedObj))
+          return console.table(JSON.parse(refreshedObj))
         }
       })
     }
