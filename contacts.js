@@ -40,14 +40,15 @@ function removeContact(contactId) {
         (number) => Number(number.id).toString() !== contactId.toString(),
       )
 
-      const newObject = fs.writeFile(textFile, dltObject, (err) => {
+      fs.writeFile(textFile, dltObject, (err) => {
         if (err) console.log(err)
         else {
           console.log('File written successfully\n')
           console.log('The written has the following contents:')
+          console.log(fs.readFileSync('books.txt', 'utf8'))
         }
       })
-      return console.log(newObject)
+      return console.log(parsedObj)
     }
   })
 }
@@ -68,12 +69,12 @@ function addContact(name, email, phone) {
         phone: phone,
       })
 
-      const newObj = fs.writeFile(textFile, parsedObj, (err) => {
+      fs.writeFile(textFile, data, (err) => {
         if (err) console.log(err)
         else {
           console.log('File written successfully\n')
           console.log('The written has the following contents:')
-          console.log(fs.readFileSync(textFile, 'utf8'))
+          console.log(fs.readFileSync('books.txt', 'utf8'))
         }
       })
       return console.table(newObj, ['name', 'email', 'phone'])
