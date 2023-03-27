@@ -40,18 +40,15 @@ function removeContact(contactId) {
         (number) => Number(number.id).toString() !== contactId.toString(),
       )
 
-      const newObj = fs.writeFile(
-        textFile,
-        JSON.stringify(dltObject),
-        (err) => {
-          if (err) console.log(err)
-          else {
-            console.log('File written successfully\n')
-            console.log('The written has the following contents:')
-          }
-        },
-      )
-      return console.table(newObj)
+      fs.writeFile(textFile, JSON.stringify(dltObject), (err) => {
+        if (err) console.log(err)
+        else {
+          console.log('File written successfully\n')
+          console.log('The written has the following contents:')
+          return (refreshedObj = fs.readFileSync(textFile, 'utf8'))
+        }
+      })
+      console.log(JSON.parse(refreshedObj))
     }
   })
 }
