@@ -40,7 +40,7 @@ function removeContact(contactId) {
         (number) => Number(number.id) !== contactId,
       )
       let chooseObj = dltObject
-      const refreshObj = fs.writeFile(textFile, chooseObj, (err) => {
+      fs.writeFile(textFile, chooseObj, (err) => {
         if (err) console.log(err)
         else {
           console.log('File written successfully\n')
@@ -48,7 +48,7 @@ function removeContact(contactId) {
           console.log(fs.readFileSync(textFile, 'utf8'))
         }
       })
-      return console.log(refreshObj)
+      console.log(chooseObj)
     }
   })
 }
