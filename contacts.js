@@ -39,8 +39,8 @@ function removeContact(contactId) {
       const dltObject = parsedObj.filter(
         (number) => Number(number.id) !== contactId,
       )
-
-      const refreshObj = fs.writeFile(textFile, dltObject, (err) => {
+      let chooseObj = dltObject
+      const refreshObj = fs.writeFile(textFile, chooseObj, (err) => {
         if (err) console.log(err)
         else {
           console.log('File written successfully\n')
