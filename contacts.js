@@ -45,7 +45,7 @@ function removeContact(contactId) {
         else {
           console.log('File written successfully\n')
           console.log('The written has the following contents:')
-          console.log(fs.readFileSync('books.txt', 'utf8'))
+          console.log(fs.readFileSync(textFile, 'utf8'))
         }
       })
       return console.log(parsedObj)
