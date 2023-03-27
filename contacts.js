@@ -37,7 +37,7 @@ function removeContact(contactId) {
 
       const parsedObj = JSON.parse(data)
       const dltObject = parsedObj.filter(
-        (number) => Number(number.id).toString() !== contactId.toString(),
+        (number) => Number(number.id) !== contactId,
       )
 
       fs.writeFile(textFile, JSON.stringify(dltObject), (err) => {
@@ -45,10 +45,10 @@ function removeContact(contactId) {
         else {
           console.log('File written successfully\n')
           console.log('The written has the following contents:')
-          return (refreshedObj = fs.readFileSync(textFile, 'utf8'))
+          const refreshedObj = fs.readFileSync(textFile, 'utf8')
+          return console.log(JSON.parse(refreshedObj))
         }
       })
-      console.log(JSON.parse(refreshedObj))
     }
   })
 }
