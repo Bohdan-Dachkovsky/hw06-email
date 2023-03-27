@@ -37,7 +37,7 @@ function removeContact(contactId) {
 
       const parsedObj = JSON.parse(data)
       const dltObject = parsedObj.filter(
-        (number) => Number(number.id) !== contactId,
+        (number) => Number(number.id).toString() !== contactId.toString(),
       )
       let chooseObj = dltObject
       return console.log(chooseObj)
