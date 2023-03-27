@@ -69,15 +69,15 @@ function addContact(name, email, phone) {
         phone: phone,
       })
 
-      fs.writeFile(textFile, data, (err) => {
+      fs.writeFile(textFile, JSON.stringify(parsedObj), (err) => {
         if (err) console.log(err)
         else {
           console.log('File written successfully\n')
           console.log('The written has the following contents:')
-          console.log(fs.readFileSync('books.txt', 'utf8'))
+          console.log(fs.readFileSync('parsedObj', 'utf8'))
+          return console.table(JSON.parse(newObj), ['name', 'email', 'phone'])
         }
       })
-      return console.table(newObj, ['name', 'email', 'phone'])
     }
   })
 }
